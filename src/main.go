@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -22,7 +22,7 @@ func main() {
 }
 
 func specificSamusAbility() string {
-	resp, err := http.Get("") //env
+	resp, err := http.Get("") // env
 
 	if err != nil {
 		log.Fatal(err)
@@ -30,7 +30,7 @@ func specificSamusAbility() string {
 
 	defer resp.Body.Close()
 
-	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	bodyBytes, err := io.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
