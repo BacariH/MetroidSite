@@ -22,7 +22,7 @@ func main() {
 }
 
 func specificSamusAbility() string {
-	resp, err := http.Get("https://localhost:7149/api/Trackers/1")
+	resp, err := http.Get("") //env
 
 	if err != nil {
 		log.Fatal(err)
